@@ -8,6 +8,8 @@ from fastapi_utils.guid_type import GUID
 class User(Base):
     id = Column(GUID, primary_key=True)
     email = Column(String,nullable=False, unique=True,index=True)
+    first_name = Column(String,nullable=True)
+    last_name = Column(String, nullable=True)
     password = Column(String, nullable=False)
     is_superuser = Column(Boolean(), default=False)
     is_active = Column(Boolean(), default=True)
